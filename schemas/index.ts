@@ -1,3 +1,4 @@
+import {projects} from './projects/projects'
 // import createSchema from 'part:@sanity/base/schema-creator'
 
 // // Then import schema types from any plugins that might expose them
@@ -33,7 +34,7 @@ const foo = s.document({
   ],
 })
 
-export const schemaTypes = [foo.schema(), post.schema()]
+export const schemaTypes = [foo.schema(), post.schema(), projects.schema()]
 
 export default createSchema({
   name: 'default',
