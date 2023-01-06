@@ -12,29 +12,30 @@
 //   types: schemaTypes.concat([
 //     // The following are document types which will appear
 //     // in the studio.
-  
+
 //     // When added to this list, object types can be used as
 //     // { type: 'typename' } in other document schemas
 //   ]),
-// }) 
+// })
 
-import { createSchema } from "sanity"
+import {createSchema} from 'sanity'
 
-import {s} from "sanity-typed-schema-builder"  
+import {s} from 'sanity-typed-schema-builder'
+import {post} from './blog/post'
 
 const foo = s.document({
-  name: "foo",
+  name: 'foo',
   fields: [
     {
-      name: "foo",
-      type: s.string()
-    }
-  ]
+      name: 'foo',
+      type: s.string(),
+    },
+  ],
 })
 
-export const schemaTypes = [foo.schema()]
+export const schemaTypes = [foo.schema(), post.schema()]
 
 export default createSchema({
-  name: "default",
+  name: 'default',
   types: schemaTypes,
 })
