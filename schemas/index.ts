@@ -24,6 +24,8 @@ import {createSchema} from 'sanity'
 import {s} from 'sanity-typed-schema-builder'
 import {post} from './blog/post'
 import {experience} from './experience/experience'
+import {reviews} from './reviews/reviews'
+import {services} from './home/services'
 
 const foo = s.document({
   name: 'foo',
@@ -35,7 +37,14 @@ const foo = s.document({
   ],
 })
 
-export const schemaTypes = [foo.schema(), post.schema(), projects.schema(), experience.schema()]
+export const schemaTypes = [
+  foo.schema(),
+  post.schema(),
+  projects.schema(),
+  experience.schema(),
+  reviews.schema(),
+  services.schema(),
+]
 
 export default createSchema({
   name: 'default',
