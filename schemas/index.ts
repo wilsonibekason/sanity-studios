@@ -26,6 +26,9 @@ import {post} from './blog/post'
 import {experience} from './experience/experience'
 import {reviews} from './reviews/reviews'
 import {services} from './home/services'
+import {author} from './blog/author'
+import blockcontent from './blog/blockcontent'
+import {blogblockContent} from './blog/blogblockcontent'
 
 const foo = s.document({
   name: 'foo',
@@ -39,11 +42,13 @@ const foo = s.document({
 
 export const schemaTypes = [
   foo.schema(),
-  post.schema(),
+  // post.schema(),
   projects.schema(),
   experience.schema(),
-  reviews.schema(),
+  // reviews.schema(),
   services.schema(),
+  // author.schema(),
+  // blogblockContent.schema(),
 ]
 
 export default createSchema({
