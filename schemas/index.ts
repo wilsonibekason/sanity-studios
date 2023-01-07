@@ -42,13 +42,13 @@ const foo = s.document({
 
 export const schemaTypes = [
   foo.schema(),
-  // post.schema(),
-  projects.schema(),
-  experience.schema(),
-  // reviews.schema(),
-  services.schema(),
-  // author.schema(),
-  // blogblockContent.schema(),
+  // // post.schema(),
+  // projects.schema(),
+  // experience.schema(),ss
+  // // reviews.schema(),
+  // services.schema(),
+  // // author.schema(),
+  // // blogblockContent.schema(),
 ]
 
 export default createSchema({
