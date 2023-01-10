@@ -49,6 +49,7 @@ export const schemaTypes = [
   services.schema(),
   reviews.schema(),
   personal.schema(),
+  projects.schema(),
 ]
 
 export default createSchema({

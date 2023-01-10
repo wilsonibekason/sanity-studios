@@ -31,7 +31,6 @@ export const projects = s.document({
     select: {
       title: 'title',
       description: 'description',
-      imageUrl: '',
       media: 'projectimage',
     },
   },
