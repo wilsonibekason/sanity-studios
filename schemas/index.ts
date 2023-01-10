@@ -27,6 +27,7 @@ import {experience} from './experience/experience'
 import {reviews} from './reviews/reviews'
 import {services} from './home/services'
 import {author} from './blog/author'
+import {personal} from './home/personal'
 
 import blockcontent from './blog/blockcontent'
 import {blogblockContent} from './blog/blogblockcontent'
@@ -42,7 +43,13 @@ const foo = s.document({
   ],
 })
 
-export const schemaTypes = [foo.schema(), experience.schema(), services.schema()]
+export const schemaTypes = [
+  foo.schema(),
+  experience.schema(),
+  services.schema(),
+  reviews.schema(),
+  personal.schema(),
+]
 
 export default createSchema({
   name: 'default',
