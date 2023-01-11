@@ -39,6 +39,11 @@ export const post = s.document({
       }),
     },
     {
+      name: 'publishedAt',
+      title: 'Published At',
+      type: s.date({placeholder: 'Published Date'}),
+    },
+    {
       name: 'categories',
       title: 'Categories',
       type: s.array({of: [s.reference({to: ['category' as any]})]}),

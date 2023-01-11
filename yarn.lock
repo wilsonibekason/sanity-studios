@@ -2973,6 +2973,11 @@
   "resolved" "https://registry.npmjs.org/escalade/-/escalade-3.1.1.tgz"
   "version" "3.1.1"
 
+"escape-regexp-component@^1.0.2":
+  "integrity" "sha512-B0yxafj1D1ZTNEHkFoQxz4iboZSfaZHhaNhIug7GcUCL4ZUrVSJZTmWUAkPOFaYDfi3RNT9XM082TuGE6jpmiQ=="
+  "resolved" "https://registry.npmjs.org/escape-regexp-component/-/escape-regexp-component-1.0.2.tgz"
+  "version" "1.0.2"
+
 "escape-string-regexp@^1.0.5":
   "integrity" "sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg=="
   "resolved" "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz"
@@ -5362,6 +5367,13 @@
   dependencies:
     "diff-match-patch" "^1.0.5"
 
+"sanity-schema-builder@^0.1.3":
+  "integrity" "sha512-L+Bezt03mAij6R1wM77Qj2+AbzFvR7yq/LQBZIVt8HGP+d48th7Ha4v2Gr2KGmgoblkpKve3MoXnxSfst9FgHw=="
+  "resolved" "https://registry.npmjs.org/sanity-schema-builder/-/sanity-schema-builder-0.1.3.tgz"
+  "version" "0.1.3"
+  dependencies:
+    "to-title-case" "^1.0.0"
+
 "sanity-typed-schema-builder@^2.0.1":
   "integrity" "sha512-cofIEiKRHUVZlCZX0vwjbqK7lnqPrbrVpDDHbnfkEwe5AzgWpbimGe8XzJgACqbzk6idnNDvIUhVIFvIgNFbEQ=="
   "resolved" "https://registry.npmjs.org/sanity-typed-schema-builder/-/sanity-typed-schema-builder-2.0.1.tgz"
@@ -5850,10 +5862,27 @@
   "resolved" "https://registry.npmjs.org/tiny-warning/-/tiny-warning-1.0.3.tgz"
   "version" "1.0.3"
 
+"title-case-minors@^1.0.0":
+  "integrity" "sha512-GFT+1ZjqJgq5AywOXjl9VelGgqMpOtfwdxYaYy3eUE1gbyxneeSnADLoov7TxXelqftIhlblsnHVqw5hNFUbGQ=="
+  "resolved" "https://registry.npmjs.org/title-case-minors/-/title-case-minors-1.0.0.tgz"
+  "version" "1.0.0"
+
+"to-capital-case@^1.0.0":
+  "integrity" "sha512-mfERGNFweI+x+OctN7rlbZQqDC68BjXEt9gOrf8qy26IyqQyUTqfdKQBN3XhqN0fP9Pl4zaoXKGeWv+wSPXIyQ=="
+  "resolved" "https://registry.npmjs.org/to-capital-case/-/to-capital-case-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "to-space-case" "^1.0.0"
+
 "to-fast-properties@^2.0.0":
   "integrity" "sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog=="
   "resolved" "https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-2.0.0.tgz"
   "version" "2.0.0"
+
+"to-no-case@^1.0.0":
+  "integrity" "sha512-Z3g735FxuZY8rodxV4gH7LxClE4H0hTIyHNIHdk+vpQxjLm0cwnKXq/OFVZ76SOQmto7txVcwSCwkU5kqp+FKg=="
+  "resolved" "https://registry.npmjs.org/to-no-case/-/to-no-case-1.0.2.tgz"
+  "version" "1.0.2"
 
 "to-regex-range@^5.0.1":
   "integrity" "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ=="
@@ -5861,6 +5890,30 @@
   "version" "5.0.1"
   dependencies:
     "is-number" "^7.0.0"
+
+"to-sentence-case@^1.0.0":
+  "integrity" "sha512-egaI3iiTSS5FpN8ZiN08Kqx8EQDTK4yqnp5m2WqR5qGSMLi605gYn887drlyZFn+lLMQAOC7tABafk/oQIoqGQ=="
+  "resolved" "https://registry.npmjs.org/to-sentence-case/-/to-sentence-case-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "to-no-case" "^1.0.0"
+
+"to-space-case@^1.0.0":
+  "integrity" "sha512-rLdvwXZ39VOn1IxGL3V6ZstoTbwLRckQmn/U8ZDLuWwIXNpuZDhQ3AiRUlhTbOXFVE9C+dR51wM0CBDhk31VcA=="
+  "resolved" "https://registry.npmjs.org/to-space-case/-/to-space-case-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "to-no-case" "^1.0.0"
+
+"to-title-case@^1.0.0":
+  "integrity" "sha512-zy39Lh3pLnDIvS7PEoPNIo7Jbm7IK4NCruhQDEsHmVmvqn4v+WlwgQZtHESbYxnwhU0YCdTJJ4IQshR2XWYVFw=="
+  "resolved" "https://registry.npmjs.org/to-title-case/-/to-title-case-1.0.0.tgz"
+  "version" "1.0.0"
+  dependencies:
+    "escape-regexp-component" "^1.0.2"
+    "title-case-minors" "^1.0.0"
+    "to-capital-case" "^1.0.0"
+    "to-sentence-case" "^1.0.0"
 
 "toggle-selection@^1.0.6":
   "integrity" "sha512-BiZS+C1OS8g/q2RRbJmy59xpyghNBqrr6k5L/uKBGRsTfxmu3ffiRnd8mlGPUVayg8pvfi5urfnu8TU7DVOkLQ=="

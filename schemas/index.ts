@@ -54,6 +54,9 @@ export const schemaTypes = [
   brands.schema(),
   contacts.schema(),
   contactinfo.schema(),
+  author.schema(),
+  // blogblockContent.schema(),
+  // post.schema(),
 ]
 
 export default createSchema({

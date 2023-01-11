@@ -7,7 +7,7 @@ export const author = s.document({
     {
       name: 'wilson',
       title: 'Wilson',
-      type: s.string({max: 22, regex: /wilson/gi}),
+      type: s.string({max: 22}),
       optional: true,
     },
     {
@@ -44,7 +44,7 @@ export const author = s.document({
               name: 'link',
               // @ts-ignore
               type: s.object({
-                fields: [{title: 'URL', type: s.url({placeholder: 'url'}), name: 'url'}],
+                fields: [{title: ' URL', type: s.url({placeholder: 'url'}), name: 'url'}],
               }),
             },
             {
@@ -61,7 +61,7 @@ export const author = s.document({
   preview: {
     select: {
       title: 'wilson',
-      media: 'image',
+      media: 'wilsonimage',
     },
   },
 })
