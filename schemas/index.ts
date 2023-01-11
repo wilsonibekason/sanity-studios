@@ -34,6 +34,7 @@ import {blogblockContent} from './blog/blogblockcontent'
 import {brands} from './home/brands'
 import {contacts} from './contact/contact'
 import {contactinfo} from './contact/contactinfo'
+import {techStacks} from './projects/techstacks'
 
 const foo = s.document({
   name: 'foo',
@@ -55,6 +56,7 @@ export const schemaTypes = [
   contacts.schema(),
   contactinfo.schema(),
   author.schema(),
+  techStacks.schema(),
   // blogblockContent.schema(),
   // post.schema(),
 ]
