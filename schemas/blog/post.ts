@@ -5,6 +5,7 @@ import {
   SanityDocument,
   SanityFile,
 } from 'sanity-typed-schema-builder'
+// import {} from "@sanity/base/initial-value-templatef"
 const someDocumentType = 'author'
 export const post = s.document({
   title: 'post',
@@ -22,14 +23,16 @@ export const post = s.document({
       title: 'Slug',
       description: '',
       type: s.slug({
-        options: {isUnique: () => true, maxLength: 100, source: 'title', slugify: () => 'heelo'},
+        options: {isUnique: () => true, maxLength: 100, source: 'title'},
       }),
     },
     {
       name: 'author',
       title: 'Author',
-      type: s.reference({to: [someDocumentType as any]}),
+      // type: s.reference({to: [someDocumentType as any]}),\
+      type: s.string(),
     },
+   
     {
       name: 'mainImage',
       title: 'MainImage',
@@ -46,21 +49,50 @@ export const post = s.document({
     {
       name: 'categories',
       title: 'Categories',
-      type: s.array({of: [s.reference({to: ['category' as any]})]}),
+      // type: s.array({of: [s.reference({to: ['category' as any]})]}),
+      type: s.array({of: [s.string()]}),
     },
     {
       name: 'tags',
       title: 'Tags',
       type: s.array({
-        length: 100,
-        of: [s.string({max: 200, regex: /sjsss/gi})],
+        length: 3,
+        of: [s.string({max: 200})],
         options: {layout: 'tags'},
       }),
     },
     {
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: s.array({
+        of: [
+          s.block({
+            options: {spellCheck: true},
+            styles: [
+              {title: 'Normal', value: 'normal'},
+              {title: 'H1', value: 'h1'},
+              {title: 'H2', value: 'h2'},
+              {title: 'H3', value: 'h3'},
+              {title: 'H4', value: 'h4'},
+              {title: 'Quote', value: 'blockquote'},
+              {title: 'Paragraphy', value: 'p'},
+            ],
+            lists: [
+              {title: 'Bullet', value: 'bullet'},
+              {title: 'Number', value: 'number'},
+              {title: 'Checkmarks', value: 'checkmarks'},
+              {title: 'Ordered', value: 'li'},
+            ],
+            marks: {
+              decorators: [
+                {title: 'Strong', value: 'strong'},
+                {title: 'Emphasis', value: 'em'},
+                {title: 'Bold', value: 'bold'},
+              ],
+            },
+          }),
+        ],
+      }),
     },
   ],
   preview: {
@@ -70,9 +102,9 @@ export const post = s.document({
       media: 'mainImage',
     },
     // @ts-ignore
-    prepare(selection) {
-      const {author} = selection
-      return Object.assign({}, selection, {subtitle: author && `by ${author}`})
-    },
+    // prepare (selection) {
+    //   const {author} = selection
+    //   return Object.assign({}, selection, {subtitle: author && `by ${author}`})
+    // },
   },
 })
