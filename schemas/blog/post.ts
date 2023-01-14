@@ -32,7 +32,7 @@ export const post = s.document({
       // type: s.reference({to: [someDocumentType as any]}),\
       type: s.string(),
     },
-   
+
     {
       name: 'mainImage',
       title: 'MainImage',
@@ -61,6 +61,7 @@ export const post = s.document({
         options: {layout: 'tags'},
       }),
     },
+
     {
       name: 'body',
       title: 'Body',

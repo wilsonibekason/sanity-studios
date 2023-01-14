@@ -1,8 +1,6 @@
 import {s} from 'sanity-typed-schema-builder'
 
-export const social = s.document({
-  name: 'social',
-  title: 'Social',
+export const social = s.object({
   fields: [
     {
       name: 'name',

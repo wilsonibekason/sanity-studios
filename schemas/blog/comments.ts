@@ -1,5 +1,8 @@
 import {s} from 'sanity-typed-schema-builder'
 import {} from '@sanity/vision'
+import {social} from './social'
+
+// const blockContent = s.array('blockcontent')
 
 export const comment = s.document({
   name: 'comment',
@@ -23,7 +26,7 @@ export const comment = s.document({
     {
       name: 'socials',
       title: 'Socials',
-      type: s.array({of: ['social' as any]}),
+      type: s.array({of: [social]}),
     },
   ],
   preview: {
@@ -32,3 +35,5 @@ export const comment = s.document({
     },
   },
 })
+const type = s.block()
+type Value = s.infer<typeof type>
