@@ -64,7 +64,7 @@ export const schemaTypes = [
   // blogblockContent.schema(),
   post.schema(),
   comment.schema(),
-  social.schema(),
+  // social.schema(),
 ]
 
 export default createSchema({
