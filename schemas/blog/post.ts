@@ -89,9 +89,29 @@ export const post = s.document({
                 {title: 'Strong', value: 'strong'},
                 {title: 'Emphasis', value: 'em'},
                 {title: 'Bold', value: 'bold'},
+                {title: 'Underline', value: 'underline'},
+                {title: 'Strike', value: 'strike-through'},
+              ],
+              annotations: [
+                // {`
+                //   name: "link",
+                //   title: "URL",
+                //   type: s.object({
+                //     fields: [{
+                //       name: "href",
+                //       title: "URL",
+                //       type: s.url()
+                //     }]
+                //   })
+                // },
+                // {
+                //   name:"dd",
+                //   type: s.string()
+                // }
               ],
             },
           }),
+          s.image({options: {hotspot: true}, fields: [{name: 'caption', type: s.string()}]}),
         ],
       }),
     },

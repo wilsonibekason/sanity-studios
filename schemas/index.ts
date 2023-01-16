@@ -65,6 +65,7 @@ export const schemaTypes = [
   post.schema(),
   comment.schema(),
   // social.schema(),
+
 ]
 
 export default createSchema({
