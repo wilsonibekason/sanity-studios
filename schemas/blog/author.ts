@@ -14,7 +14,7 @@ export const author = s.document({
       name: 'slug',
       title: 'SLug',
       type: s.slug({
-        options: {isUnique: () => true, maxLength: 100, source: 'title', slugify: () => 'heelo'},
+        options: {isUnique: () => true, maxLength: 100, source: 'wilson', slugify: () => 'heelo'},
       }),
     },
     {
@@ -25,36 +25,37 @@ export const author = s.document({
     {
       name: 'wilsonbio',
       title: 'WilsonBio',
-      type: s.block({
-        options: {spellCheck: true},
-        styles: [
-          {title: 'H1', value: 'h1'},
-          {title: 'H2', value: 'h2'},
+      type: s.array({
+        of: [
+          s.block({
+            options: {spellCheck: true},
+            styles: [
+              {title: 'Normal', value: 'normal'},
+              {title: 'H1', value: 'h1'},
+              {title: 'H2', value: 'h2'},
+              {title: 'H3', value: 'h3'},
+              {title: 'H4', value: 'h4'},
+              {title: 'Quote', value: 'blockquote'},
+              {title: 'Paragraphy', value: 'p'},
+            ],
+            lists: [
+              {title: 'Bullet', value: 'bullet'},
+              {title: 'Number', value: 'number'},
+              {title: 'Checkmarks', value: 'checkmarks'},
+              {title: 'Ordered', value: 'li'},
+            ],
+            marks: {
+              decorators: [
+                {title: 'Strong', value: 'strong'},
+                {title: 'Emphasis', value: 'em'},
+                {title: 'Bold', value: 'bold'},
+                {title: 'Underline', value: 'underline'},
+                {title: 'Strike', value: 'strike-through'},
+              ],
+            },
+          }),
+          s.image({options: {hotspot: true}, fields: [{name: 'caption', type: s.string()}]}),
         ],
-        lists: [],
-        marks: {
-          decorators: [
-            {title: 'Strong', value: 'strong'},
-            {title: 'Emphasis', value: 'em'},
-            {title: 'Bold', value: 'bold'},
-          ],
-          annotations: [
-            {
-              title: 'URL',
-              name: 'link',
-              // @ts-ignore
-              type: s.object({
-                fields: [{title: ' URL', type: s.url({placeholder: 'url'}), name: 'url'}],
-              }),
-            },
-            {
-              name: 'author',
-              title: 'Author',
-              // @ts-ignore
-              type: s.reference({to: ['author' as any]}),
-            },
-          ],
-        },
       }),
     },
   ],

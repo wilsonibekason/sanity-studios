@@ -38,6 +38,7 @@ import {techStacks} from './projects/techstacks'
 import {video} from './home/video'
 import {comment} from './blog/comments'
 import {social} from './blog/social'
+import {Categories} from './home/categories'
 
 const foo = s.document({
   name: 'foo',
@@ -58,14 +59,14 @@ export const schemaTypes = [
   brands.schema(),
   contacts.schema(),
   contactinfo.schema(),
-  // author.schema(),
+  author.schema(),
   techStacks.schema(),
   video.schema(),
   // blogblockContent.schema(),
   post.schema(),
   comment.schema(),
+  Categories.schema(),
   // social.schema(),
-
 ]
 
 export default createSchema({
