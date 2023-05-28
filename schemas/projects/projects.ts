@@ -26,6 +26,21 @@ export const projects = s.document({
       title: 'ProjectImage',
       type: s.image({options: {hotspot: true}}),
     },
+    {
+      name: 'projectLink',
+      title: ' Project Link',
+      description: 'This is the project link for the projects',
+      type: s.string(),
+    },
+    {
+      name: 'skillls',
+      title: 'Skills',
+      type: s.array({
+        length: 3,
+        of: [s.string({max: 200})],
+        options: {layout: 'grid'},
+      }),
+    },
   ],
   preview: {
     select: {

@@ -19,6 +19,25 @@ export const experience = s.document({
       title: 'Duration',
       type: s.string(),
     },
+    {
+      name: 'description',
+      description: 'Description',
+      title: 'Description',
+      type: s.string(),
+    },
+    {
+      name: 'company',
+      title: 'Company',
+      type: s.string(),
+    },
+    {
+      name: 'skillls',
+      title: 'Skills',
+      type: s.array({
+        of: [s.string({max: 200})],
+        options: {layout: 'tags'},
+      }),
+    },
   ],
   preview: {
     select: {
