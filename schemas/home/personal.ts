@@ -18,7 +18,7 @@ export const personal = s.document({
       name: 'desc',
       title: 'Description',
       type: s.text({
-        max: 100,
+        max: 10000,
         min: 20,
       }),
     },
