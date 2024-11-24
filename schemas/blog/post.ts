@@ -1,10 +1,4 @@
-import {
-  s,
-  ParsedSanityDocument,
-  SanityBlock,
-  SanityDocument,
-  SanityFile,
-} from 'sanity-typed-schema-builder'
+import {s} from 'sanity-typed-schema-builder'
 // import {} from "@sanity/base/initial-value-templatef"
 const someDocumentType = 'author'
 export const post = s.document({
@@ -49,7 +43,6 @@ export const post = s.document({
     {
       name: 'categories',
       title: 'Categories',
-      // type: s.array({of: [s.reference({to: ['category' as any]})]}),
       type: s.array({of: [s.string()]}),
     },
     {
@@ -77,6 +70,7 @@ export const post = s.document({
               {title: 'H4', value: 'h4'},
               {title: 'Quote', value: 'blockquote'},
               {title: 'Paragraphy', value: 'p'},
+              {title: 'Code Block', value: 'code'}, // Add this line
             ],
             lists: [
               {title: 'Bullet', value: 'bullet'},
@@ -91,6 +85,7 @@ export const post = s.document({
                 {title: 'Bold', value: 'bold'},
                 {title: 'Underline', value: 'underline'},
                 {title: 'Strike', value: 'strike-through'},
+                {title: 'Code', value: 'code'},
               ],
               annotations: [
                 // {`
