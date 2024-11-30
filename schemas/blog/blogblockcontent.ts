@@ -52,3 +52,37 @@ export const blogblockContent = s.array({
     s.image({options: {hotspot: true}}),
   ],
 })
+
+// import { s } from "@sanity-typed/schema-builder";
+
+// const comment = s.objectNamed({
+//   name: "comment",
+//   fields: [
+//     {
+//       name: "author",
+//       title: "Author",
+//       type: s.string(),
+//     },
+//     {
+//       name: "content",
+//       title: "Content",
+//       type: s.text(),
+//     },
+//     {
+//       name: "parent",
+//       title: "Parent Comment",
+//       type: s.reference({
+//         to: [{ type: "comment" }], // Self-referencing the `comment` type
+//       }),
+//     },
+//     {
+//       name: "post",
+//       title: "Post",
+//       type: s.reference({
+//         to: [{ type: "post" }], // Assuming you have a `post` type
+//       }),
+//     },
+//   ],
+// });
+
+// export const commentSchema = comment.schema();

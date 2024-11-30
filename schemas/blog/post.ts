@@ -1,10 +1,13 @@
 import {s} from 'sanity-typed-schema-builder'
-// import {} from "@sanity/base/initial-value-templatef"
-const someDocumentType = 'author'
+import {comment} from './comments'
+import {author} from './author'
+import {projects} from '../projects/projects'
+import {experience} from '../experience/experience'
+
 export const post = s.document({
   title: 'post',
   name: 'post',
-  //   @ts-ignore
+  // @ts-ignore
   fields: [
     {
       name: 'title',
@@ -23,10 +26,23 @@ export const post = s.document({
     {
       name: 'author',
       title: 'Author',
-      // type: s.reference({to: [someDocumentType as any]}),\
-      type: s.string(),
+      type: s.reference({to: [author]}),
     },
-
+    // {
+    //   name: 'commentss',
+    //   title: 'Comments',
+    //   type: s.reference({to: [comment]}),
+    //   optional: true,
+    // },
+    // {
+    //   name: 'comments',
+    //   title: 'Comments',
+    //   type: s.array({
+    //     of: [s.reference({to: [author]})],
+    //   }),
+    //   optional: true,
+    //   description: 'Displaying threads of comments for each post',
+    // },
     {
       name: 'mainImage',
       title: 'MainImage',

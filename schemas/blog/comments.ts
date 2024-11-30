@@ -1,8 +1,6 @@
 import {s} from 'sanity-typed-schema-builder'
-import {} from '@sanity/vision'
-import {social} from './social'
-
-// const blockContent = s.array('blockcontent')
+import {social} from './social' // Ensure this is a valid document schema
+import {post} from './post' // Ensure this is a valid document schema
 
 export const comment = s.document({
   name: 'comment',
@@ -11,29 +9,46 @@ export const comment = s.document({
     {
       name: 'name',
       title: 'Name',
-      type: s.string(),
+      type: s.string(), // Simple string field for the commenter's name
     },
     {
       name: 'email',
       title: 'Email',
-      type: s.string({max: 1000}),
+      type: s.string(), // Simple string field for the email
     },
     {
       name: 'message',
       title: 'Message',
-      type: s.text(),
+      type: s.text(), // Text field for the message content
+    },
+    // {
+    //   name: 'parent',
+    //   title: 'Parent Comment',
+    //   type: s.reference({
+    //     to: [{ type: 'comment' }], // Reference to another comment
+    //   }),
+    // },
+    {
+      name: 'post',
+      title: 'Post',
+      type: s.reference({
+        to: [post],
+      }),
     },
     {
       name: 'socials',
       title: 'Socials',
-      type: s.array({of: [social]}),
+      optional: true,
+      type: s.array({
+        of: [social],
+      }),
     },
   ],
   preview: {
     select: {
-      title: 'name',
+      title: 'name', // Use the name field as the preview title
+      subtitle: 'message', // Use the message field as a subtitle
+      media: 'socials[0].icon', // Example media; customize based on actual field
     },
   },
 })
-const type = s.block()
-type Value = s.infer<typeof type>

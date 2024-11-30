@@ -1,23 +1,4 @@
 import {projects} from './projects/projects'
-// import createSchema from 'part:@sanity/base/schema-creator'
-
-// // Then import schema types from any plugins that might expose them
-// import schemaTypes from 'all:part:@sanity/base/schema-type'
-
-// // Then we give our schema to the builder and provide the result to Sanity
-// export default createSchema({
-//   // We name our schema
-//   name: 'default',
-//   // Then proceed to concatenate our document type
-//   // to the ones provided by any plugins that are installed
-//   types: schemaTypes.concat([
-//     // The following are document types which will appear
-//     // in the studio.
-
-//     // When added to this list, object types can be used as
-//     // { type: 'typename' } in other document schemas
-//   ]),
-// })
 
 import {createSchema} from 'sanity'
 
@@ -40,16 +21,6 @@ import {comment} from './blog/comments'
 import {social} from './blog/social'
 import {Categories} from './home/categories'
 
-const foo = s.document({
-  name: 'foo',
-  fields: [
-    {
-      name: 'foo',
-      type: s.string(),
-    },
-  ],
-})
-
 export const schemaTypes = [
   experience.schema(),
   services.schema(),
@@ -61,12 +32,12 @@ export const schemaTypes = [
   contactinfo.schema(),
   author.schema(),
   techStacks.schema(),
+  social.schema(),
   video.schema(),
-  // blogblockContent.schema(),
-  post.schema(),
   comment.schema(),
   Categories.schema(),
-  // social.schema(),
+  // blogblockContent.schema(),
+  post.schema(),
 ]
 
 export default createSchema({
