@@ -29,6 +29,21 @@ export const comment = s.document({
     //   }),
     // },
     {
+      name: 'parentId',
+      title: 'Parent Comment ID',
+      type: s.string(),
+      optional: true,
+    },
+    {
+      name: 'createdAt',
+      title: 'Created At',
+      type: s.datetime(),
+      optional: true,
+      options: {
+        default: () => new Date().toISOString(),
+      },
+    },
+    {
       name: 'post',
       title: 'Post',
       type: s.reference({
